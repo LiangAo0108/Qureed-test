@@ -1,0 +1,2 @@
+venv = "C:\\Users\\25680\\Desktop\\QureedTest\\.venv"
+packages = [ "qutip", "qureed", "matplotlib", "numpy", "qureed_project_server",]
