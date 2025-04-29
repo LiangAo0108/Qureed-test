@@ -18,8 +18,6 @@ import jax.numpy as jnp
 import custom
 
 
-
-
 class Processor(GenericDevice):
     ports = {
         
@@ -125,13 +123,17 @@ class Processor(GenericDevice):
     def apply_unit_cell(self, qin0, qin1, phase_shift, external_phase_shift, time=None, *args, **kwargs):
 
         if time is None:
-            time = 0
+            time = 0.0
+        time = float(time)
 
         signals = kwargs.get("signals", {})
 
         # get the envelopes
-        qin0_signal = signals.get("qin0", None)
-        qin1_signal = signals.get("qin1", None)
+        #qin0_signal = signals.get("qin0", None)
+        #qin1_signal = signals.get("qin1", None)
+        # 直接从参数获取信号，而不是从 kwargs["signals"]
+        qin0_signal = qin0  # 参数已传递
+        qin1_signal = qin1
 
         if qin0_signal is None:
             env0 = Envelope()
@@ -172,7 +174,8 @@ class Processor(GenericDevice):
         """
         try:
             if time is None:
-                time = 0
+                time = 0.0
+            time = float(time)
 
             signals = kwargs.get("signals", {})
             if "phase_shift" in kwargs.get("signals"):
@@ -183,12 +186,12 @@ class Processor(GenericDevice):
 
             phase_shift = signals.get("phase_shift", None)
             external_phase_shift = signals.get("external_phase_shift", None)
-            qin0_singal = signals.get("qin0", None)
+            qin0_signal = signals.get("qin0", None)
             qin1_signal = signals.get("qin1", None)
             qin2_signal = signals.get("qin2", None)
             qin3_signal = signals.get("qin3", None)
 
-            unit1_qout0, unit1_qout1 = self.apply_unit_cell(qin0_singal, qin1_signal, phase_shift,
+            unit1_qout0, unit1_qout1 = self.apply_unit_cell(qin0_signal, qin1_signal, phase_shift,
                                                             external_phase_shift)
             unit2_qout0, unit2_qout1 = self.apply_unit_cell(qin2_signal, qin3_signal, phase_shift,
                                                             external_phase_shift)
@@ -214,7 +217,6 @@ class Processor(GenericDevice):
 
         except Exception as e:
             self.log_message("Error", exc_info=True)
-
 
 
     @log_action
