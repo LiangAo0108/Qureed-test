@@ -101,7 +101,6 @@ class UnitCell(GenericDevice):
             if "phase_shift" in kwargs.get("signals"):
                 self.phase_shift = kwargs["signals"]["phase_shift"].contents
 
-
             if "external_phase_shift" in kwargs.get("signals"):
                 self.external_phase_shift = kwargs["signals"]["external_phase_shift"].contents
 
@@ -110,9 +109,6 @@ class UnitCell(GenericDevice):
             # get the envelopes
             qin0_signal = signals.get("qin0", None)
             qin1_signal = signals.get("qin1", None)
-
-            if (qin0_signal is None) and (qin1_signal is None):
-                return
 
             if qin0_signal is None:
                 env0 = Envelope()
@@ -131,6 +127,7 @@ class UnitCell(GenericDevice):
                 print("MZI has no input")
                 self.log_message("MZI no input here")
                 return
+
 
             ce = CompositeEnvelope(env0, env1)
             ce.combine(env0.fock, env1.fock)
@@ -163,6 +160,11 @@ class UnitCell(GenericDevice):
             # set the modified envelope to the content of output signal
             qout0_signal.set_contents(env0)
             qout1_signal.set_contents(env1)
+
+############################################### test the signal #####################################################
+            self.log_message(
+                f"signal before return: qout0: {qout0_signal.contents.fock.state}, qout1: {qout1_signal.contents.fock.state}")
+
             # return to the result
             result = [("qout0", qout0_signal, time), ("qout1", qout1_signal, time)]
             self.log_message(f"Unit Cell returning {kwargs['signals']}" )
