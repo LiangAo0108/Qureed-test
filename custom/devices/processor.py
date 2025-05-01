@@ -150,8 +150,6 @@ class Processor(GenericDevice):
                 except Exception as e:
                     self.log_message(f"apply unit cell error: {traceback.format_exc()}")
 
-
-            # des的内容
             if time is None:
                 time = 0.0
             time = float(time)
