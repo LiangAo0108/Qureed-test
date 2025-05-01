@@ -121,107 +121,112 @@ class Processor(GenericDevice):
 
     @log_action
     @schedule_next_event
-    def apply_unit_cell(self, qin0_signal, qin1_signal, phase_shift, external_phase_shift, time=None, *args, **kwargs):
-
-        if time is None:
-            time = 0.0
-        time = float(time)
-
-        #signals = kwargs.get("signals", {})
-        # get the envelopes
-        #qin0_signal = signals.get("qin0", None)
-        #qin1_signal = signals.get("qin1", None)
-
-
-        if qin0_signal is None:
-            env0 = Envelope()
-        else:
-            #env0 = signals["qin0"].contents
-            env0 = qin0_signal.contents
-
-        if qin1_signal is None:
-            env1 = Envelope()
-        else:
-            #env1 = signals["qin1"].contents
-            env1 = qin1_signal.contents
-
-        if (qin0_signal is None) and (qin1_signal is None):
-            print("MZI has no input")
-            self.log_message("MZI no input here")
-            qout0 = GenericQuantumSignal()
-            qout1 = GenericQuantumSignal()
-            qout0.set_contents(Envelope())
-            qout1.set_contents(Envelope())
-            return qout1, qout0
-            #return
-
-        ce = CompositeEnvelope(env0, env1)
-        ce.combine(env0.fock, env1.fock)
-
-        fo_beam_splitter = Operation(CompositeOperationType.NonPolarizingBeamSplitter, eta=jnp.pi / 4)
-        fo_phase_shifter = Operation(FockOperationType.PhaseShift, phi=self.phase_shift)
-        fo_external = Operation(FockOperationType.PhaseShift, phi=self.external_phase_shift)
-
-        ce.apply_operation(fo_beam_splitter, env0.fock, env1.fock)
-        ce.apply_operation(fo_phase_shifter, env1.fock)
-        ce.apply_operation(fo_beam_splitter, env0.fock, env1.fock)
-        ce.apply_operation(fo_external, env1.fock)
-
-        qout0_signal = GenericQuantumSignal()
-        qout1_signal = GenericQuantumSignal()
-        qout0_signal.set_contents(env0)
-        qout1_signal.set_contents(env1)
-        return qout0_signal, qout1_signal
-
-    def des(self, time=None, *args, **kwargs):
-        """
-        Implement to use discrete event simulation
-        """
+    def des(self, time, *args, **kwargs):
         try:
+            def apply_unit_cell(qin0_signal, qin1_signal):
+
+                env0 = qin0_signal.contents if qin0_signal else Envelope()
+                env1 = qin1_signal.contents if qin1_signal else Envelope()
+
+                try:
+                    ce = CompositeEnvelope(env0, env1)
+                    ce.combine(env0.fock, env1.fock)
+                    self.log_message(f"composite envelope: {len(ce.states)}")
+                    # define some operation
+                    fo_beam_splitter = Operation(CompositeOperationType.NonPolarizingBeamSplitter, eta=jnp.pi / 4)
+                    fo_phase_shifter = Operation(FockOperationType.PhaseShift, phi=self.phase_shift)
+                    fo_external = Operation(FockOperationType.PhaseShift, phi=self.external_phase_shift)
+                    # apply some operation
+                    ce.apply_operation(fo_beam_splitter, env0.fock, env1.fock)
+                    ce.apply_operation(fo_phase_shifter, env1.fock)
+                    ce.apply_operation(fo_beam_splitter, env0.fock, env1.fock)
+                    ce.apply_operation(fo_external, env1.fock)
+
+                    qout0 = GenericQuantumSignal()
+                    qout1 = GenericQuantumSignal()
+                    qout0.set_contents(env0)
+                    qout1.set_contents(env1)
+                    return qout0, qout1
+                except Exception as e:
+                    self.log_message(f"apply unit cell error: {traceback.format_exc()}")
+
+
+            # des的内容
             if time is None:
                 time = 0.0
             time = float(time)
 
             signals = kwargs.get("signals", {})
-
+            # phase shift parameter
             if "phase_shift" in kwargs.get("signals"):
                 self.phase_shift = kwargs["signals"]["phase_shift"].contents
-
             if "external_phase_shift" in kwargs.get("signals"):
                 self.external_phase_shift = kwargs["signals"]["external_phase_shift"].contents
 
-            phase_shift = signals.get("phase_shift", None)
-            external_phase_shift = signals.get("external_phase_shift", None)
+            # get the envelopes
             qin0_signal = signals.get("qin0", None)
             qin1_signal = signals.get("qin1", None)
             qin2_signal = signals.get("qin2", None)
             qin3_signal = signals.get("qin3", None)
+            #phase_shift = signals.get("phase_shift", None)
+            #external_phase_shift = signals.get("external_phase_shift", None)
 
-############################### test ##########################################################
-            if qin0_signal is None and qin1_signal is None:
-                raise ValueError("input signals for unit1 is missing")
-##################################################################################################
+            # envelope
+            if qin0_signal is None:
+                env0 = Envelope()
+            else:
+                env0 = signals["qin0"].contents
+            if qin1_signal is None:
+                env1 = Envelope()
+            else:
+                env1 = signals["qin1"].contents
+            if qin2_signal is None:
+                env2 = Envelope()
+            else:
+                env2 = signals["qin2"].contents
+            if qin3_signal is None:
+                env3 = Envelope()
+            else:
+                env3 = signals["qin3"].contents
 
-            unit1_qout0, unit1_qout1 = self.apply_unit_cell(qin0_signal, qin1_signal, self.phase_shift,
-                                                            self.external_phase_shift)
-            unit2_qout0, unit2_qout1 = self.apply_unit_cell(qin2_signal, qin3_signal, self.phase_shift,
-                                                            self.external_phase_shift)
-            unit3_qout0, unit3_qout1 = self.apply_unit_cell(unit1_qout1, unit2_qout0, phase_shift, external_phase_shift)
-            unit4_qout0, unit4_qout1 = self.apply_unit_cell(unit1_qout0, unit3_qout0, phase_shift, external_phase_shift)
-            unit5_qout0, unit5_qout1 = self.apply_unit_cell(unit3_qout1, unit2_qout1, phase_shift, external_phase_shift)
+            if (qin0_signal is None) and (qin1_signal is None) and (qin2_signal is None) and (qin3_signal is None):
+                print("MZI has no input")
+                self.log_message("MZI no input here")
+                qout0 = GenericQuantumSignal()
+                qout1 = GenericQuantumSignal()
+                qout0.set_contents(Envelope())
+                qout1.set_contents(Envelope())
+                qout2 = GenericQuantumSignal()
+                qout3 = GenericQuantumSignal()
+                qout2.set_contents(Envelope())
+                qout3.set_contents(Envelope())
+                return qout1, qout0, qout2, qout3
 
-            # create new quantum signals
+            print(f"qin0_signal: {env0}, qin1_signal: {env1}, qin2_signal: {env2}, qin3_signal: {env3}")
+            self.log_message(f"env0: {env0}, env1: {env1}, env2: {env2}, env3: {env3}")
+
+            #对每个单独的unit应用apply unit cell
+            #u1_out0, u1_out1 = apply_unit_cell(env0, env1)
+            #u2_out0, u2_out1 = apply_unit_cell(qin2_signal, qin3_signal)
+            u1_out0, u1_out1 = apply_unit_cell(qin0_signal, qin1_signal)
+            u2_out0, u2_out1 = apply_unit_cell(qin2_signal,qin3_signal)
+            #u3_out0, u3_out1 = apply_unit_cell(u1_out1.contents, u2_out0.contents)
+            #u4_out0, u4_out1 = apply_unit_cell(u1_out0.contents, u3_out0.contents)
+            #u5_out0, u5_out1 = apply_unit_cell(u2_out1.contents, u3_out1.contents)
+            u3_out0, u3_out1 = apply_unit_cell(u1_out1, u2_out0)
+            u4_out0, u4_out1 = apply_unit_cell(u1_out0, u3_out0)
+            u5_out0, u5_out1 = apply_unit_cell(u2_out1, u3_out1)
+
+            # processor输出
             qout0_signal = GenericQuantumSignal()
             qout1_signal = GenericQuantumSignal()
             qout2_signal = GenericQuantumSignal()
             qout3_signal = GenericQuantumSignal()
 
-            # set the modified envelope to the content of output signal
-            #qout0_signal.set_contents(unit4_qout0)
-            qout0_signal.set_contents(unit4_qout0.contents)
-            qout1_signal.set_contents(unit4_qout1.contents)
-            qout2_signal.set_contents(unit5_qout0.contents)
-            qout3_signal.set_contents(unit5_qout1.contents)
+            qout0_signal.set_contents(u4_out0)
+            qout1_signal.set_contents(u4_out1)
+            qout2_signal.set_contents(u5_out0)
+            qout3_signal.set_contents(u5_out1)
 
             result = [("qout0", qout0_signal, time), ("qout1", qout1_signal, time),
                       ("qout2", qout2_signal, time), ("qout3", qout3_signal, time)]
@@ -229,6 +234,11 @@ class Processor(GenericDevice):
 
         except Exception as e:
             self.log_message(traceback.format_exc())
+
+
+
+
+
 
 
     @log_action
