@@ -123,10 +123,10 @@ class Processor(GenericDevice):
     @schedule_next_event
     def des(self, time, *args, **kwargs):
         try:
-            def apply_unit_cell(qin0_signal, qin1_signal):
+            def apply_unit_cell(env0, env1):
 
-                env0 = qin0_signal.contents if qin0_signal else Envelope()
-                env1 = qin1_signal.contents if qin1_signal else Envelope()
+                #env0 = qin0_signal.contents if qin0_signal else Envelope()
+                #env1 = qin1_signal.contents if qin1_signal else Envelope()
 
                 try:
                     ce = CompositeEnvelope(env0, env1)
@@ -142,11 +142,11 @@ class Processor(GenericDevice):
                     ce.apply_operation(fo_beam_splitter, env0.fock, env1.fock)
                     ce.apply_operation(fo_external, env1.fock)
 
-                    qout0 = GenericQuantumSignal()
-                    qout1 = GenericQuantumSignal()
-                    qout0.set_contents(env0)
-                    qout1.set_contents(env1)
-                    return qout0, qout1
+                    #qout0 = GenericQuantumSignal()
+                    #qout1 = GenericQuantumSignal()
+                    #qout0.set_contents(env0)
+                    #qout1.set_contents(env1)
+                    return env0, env1
                 except Exception as e:
                     self.log_message(f"apply unit cell error: {traceback.format_exc()}")
 
@@ -190,27 +190,15 @@ class Processor(GenericDevice):
             if (qin0_signal is None) and (qin1_signal is None) and (qin2_signal is None) and (qin3_signal is None):
                 print("MZI has no input")
                 self.log_message("MZI no input here")
-                qout0 = GenericQuantumSignal()
-                qout1 = GenericQuantumSignal()
-                qout0.set_contents(Envelope())
-                qout1.set_contents(Envelope())
-                qout2 = GenericQuantumSignal()
-                qout3 = GenericQuantumSignal()
-                qout2.set_contents(Envelope())
-                qout3.set_contents(Envelope())
-                return qout1, qout0, qout2, qout3
+
+                return
 
             print(f"qin0_signal: {env0}, qin1_signal: {env1}, qin2_signal: {env2}, qin3_signal: {env3}")
             self.log_message(f"env0: {env0}, env1: {env1}, env2: {env2}, env3: {env3}")
 
-            #对每个单独的unit应用apply unit cell
-            #u1_out0, u1_out1 = apply_unit_cell(env0, env1)
-            #u2_out0, u2_out1 = apply_unit_cell(qin2_signal, qin3_signal)
-            u1_out0, u1_out1 = apply_unit_cell(qin0_signal, qin1_signal)
-            u2_out0, u2_out1 = apply_unit_cell(qin2_signal,qin3_signal)
-            #u3_out0, u3_out1 = apply_unit_cell(u1_out1.contents, u2_out0.contents)
-            #u4_out0, u4_out1 = apply_unit_cell(u1_out0.contents, u3_out0.contents)
-            #u5_out0, u5_out1 = apply_unit_cell(u2_out1.contents, u3_out1.contents)
+            #apply unit cell
+            u1_out0, u1_out1 = apply_unit_cell(env0, env1)
+            u2_out0, u2_out1 = apply_unit_cell(env2,env3)
             u3_out0, u3_out1 = apply_unit_cell(u1_out1, u2_out0)
             u4_out0, u4_out1 = apply_unit_cell(u1_out0, u3_out0)
             u5_out0, u5_out1 = apply_unit_cell(u2_out1, u3_out1)
@@ -232,12 +220,6 @@ class Processor(GenericDevice):
 
         except Exception as e:
             self.log_message(traceback.format_exc())
-
-
-
-
-
-
 
     @log_action
     @schedule_next_event
