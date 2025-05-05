@@ -17,6 +17,7 @@ from photon_weave.operation import FockOperationType
 import jax.numpy as jnp
 import custom
 import traceback
+import copy
 
 
 class Processor(GenericDevice):
@@ -125,8 +126,8 @@ class Processor(GenericDevice):
         try:
             def apply_unit_cell(env0, env1):
 
-                #env0 = qin0_signal.contents if qin0_signal else Envelope()
-                #env1 = qin1_signal.contents if qin1_signal else Envelope()
+                # env0 = qin0_signal.contents if qin0_signal else Envelope()
+                # env1 = qin1_signal.contents if qin1_signal else Envelope()
 
                 try:
                     ce = CompositeEnvelope(env0, env1)
@@ -142,10 +143,10 @@ class Processor(GenericDevice):
                     ce.apply_operation(fo_beam_splitter, env0.fock, env1.fock)
                     ce.apply_operation(fo_external, env1.fock)
 
-                    #qout0 = GenericQuantumSignal()
-                    #qout1 = GenericQuantumSignal()
-                    #qout0.set_contents(env0)
-                    #qout1.set_contents(env1)
+                    # qout0 = GenericQuantumSignal()
+                    # qout1 = GenericQuantumSignal()
+                    # qout0.set_contents(env0)
+                    # qout1.set_contents(env1)
                     return env0, env1
                 except Exception as e:
                     self.log_message(f"apply unit cell error: {traceback.format_exc()}")
@@ -166,8 +167,8 @@ class Processor(GenericDevice):
             qin1_signal = signals.get("qin1", None)
             qin2_signal = signals.get("qin2", None)
             qin3_signal = signals.get("qin3", None)
-            #phase_shift = signals.get("phase_shift", None)
-            #external_phase_shift = signals.get("external_phase_shift", None)
+            # phase_shift = signals.get("phase_shift", None)
+            # external_phase_shift = signals.get("external_phase_shift", None)
 
             # envelope
             if qin0_signal is None:
@@ -196,12 +197,13 @@ class Processor(GenericDevice):
             print(f"qin0_signal: {env0}, qin1_signal: {env1}, qin2_signal: {env2}, qin3_signal: {env3}")
             self.log_message(f"env0: {env0}, env1: {env1}, env2: {env2}, env3: {env3}")
 
-            #apply unit cell
+            # apply unit cell
             u1_out0, u1_out1 = apply_unit_cell(env0, env1)
-            u2_out0, u2_out1 = apply_unit_cell(env2,env3)
+            u2_out0, u2_out1 = apply_unit_cell(env2, env3)
             u3_out0, u3_out1 = apply_unit_cell(u1_out1, u2_out0)
             u4_out0, u4_out1 = apply_unit_cell(u1_out0, u3_out0)
             u5_out0, u5_out1 = apply_unit_cell(u2_out1, u3_out1)
+            u6_out0, u6_out1 = apply_unit_cell(u4_out1, u5_out0)
 
             # processor输出
             qout0_signal = GenericQuantumSignal()
@@ -210,8 +212,8 @@ class Processor(GenericDevice):
             qout3_signal = GenericQuantumSignal()
 
             qout0_signal.set_contents(u4_out0)
-            qout1_signal.set_contents(u4_out1)
-            qout2_signal.set_contents(u5_out0)
+            qout1_signal.set_contents(u6_out0)
+            qout2_signal.set_contents(u6_out1)
             qout3_signal.set_contents(u5_out1)
 
             result = [("qout0", qout0_signal, time), ("qout1", qout1_signal, time),
@@ -220,6 +222,7 @@ class Processor(GenericDevice):
 
         except Exception as e:
             self.log_message(traceback.format_exc())
+
 
     @log_action
     @schedule_next_event
