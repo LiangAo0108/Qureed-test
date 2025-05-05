@@ -16,7 +16,7 @@ from photon_weave.operation import Operation, CompositeOperationType
 from photon_weave.operation import FockOperationType
 import jax.numpy as jnp
 import custom
-
+import traceback
 
 
 class UnitCell(GenericDevice):
@@ -100,7 +100,6 @@ class UnitCell(GenericDevice):
         try:
             if "phase_shift" in kwargs.get("signals"):
                 self.phase_shift = kwargs["signals"]["phase_shift"].contents
-
             if "external_phase_shift" in kwargs.get("signals"):
                 self.external_phase_shift = kwargs["signals"]["external_phase_shift"].contents
 
@@ -161,16 +160,13 @@ class UnitCell(GenericDevice):
             qout0_signal.set_contents(env0)
             qout1_signal.set_contents(env1)
 
-############################################### test the signal #####################################################
-            self.log_message(
-                f"signal before return: qout0: {qout0_signal.contents.fock.state}, qout1: {qout1_signal.contents.fock.state}")
-
             # return to the result
             result = [("qout0", qout0_signal, time), ("qout1", qout1_signal, time)]
             self.log_message(f"Unit Cell returning {kwargs['signals']}" )
             return result
 
         except Exception as e:
+            tb = traceback.format_exc()
             self.log_message("Error", exc_info=True)
 
 
