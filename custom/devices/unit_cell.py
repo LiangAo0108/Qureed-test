@@ -166,8 +166,7 @@ class UnitCell(GenericDevice):
             return result
 
         except Exception as e:
-            tb = traceback.format_exc()
-            self.log_message("Error", exc_info=True)
+            self.log_message(traceback.format_exc())
 
 
     @log_action

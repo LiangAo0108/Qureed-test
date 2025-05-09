@@ -103,6 +103,8 @@ class FourModeInspector(GenericDevice):
             self.log_state(f"inspector received a state:", state)
             self.log_message(f"env0: {env0.fock}, env1: {env1.fock}, env2: {env2.fock}, env3: {env3.fock}")
 
+            self.log_state(f"ce.states[0]", ce.states[0].state)
+
 
             # Extract the probabilities
             dim0 = env0.fock.dimensions
