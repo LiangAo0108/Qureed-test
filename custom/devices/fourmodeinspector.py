@@ -122,7 +122,7 @@ class FourModeInspector(GenericDevice):
                         for l in range(dim3):
 
                             prob = state[((i * dim1 + j) * dim2 + k) * dim3 + l, ((i * dim1 + j) * dim2 + k) * dim3 + l]
-                            if abs(prob) > 1e-10: # Filter out near-zero values
+                            if abs(prob) > 1e-5: # Filter out near-zero values
                                 key = f"|{i},{j},{k},{l}>"
 
                                 unique_probabilities[key] = jnp.abs(prob)
