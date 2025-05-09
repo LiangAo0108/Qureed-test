@@ -101,13 +101,18 @@ class FourModeInspector(GenericDevice):
 
             state = ce.trace_out(env0.fock, env1.fock, env2.fock, env3.fock)
             self.log_state(f"inspector received a state:", state)
+            self.log_message(f"env0: {env0.fock}, env1: {env1.fock}, env2: {env2.fock}, env3: {env3.fock}")
+
 
             # Extract the probabilities
             dim0 = env0.fock.dimensions
             dim1 = env1.fock.dimensions
             dim2 = env2.fock.dimensions
             dim3 = env3.fock.dimensions
-
+            self.log_message(f"env0.fock.dimensions = {env0.fock.dimensions}")
+            self.log_message(f"env1.fock.dimensions = {env1.fock.dimensions}")
+            self.log_message(f"env2.fock.dimensions = {env2.fock.dimensions}")
+            self.log_message(f"env3.fock.dimensions = {env3.fock.dimensions}")
             unique_probabilities = {}
             for i in range(dim0):
                 for j in range(dim1):
@@ -122,10 +127,11 @@ class FourModeInspector(GenericDevice):
             filtered_probabilities = [f"{state} -> {prob}" for state, prob in unique_probabilities.items()]
             log_string = "\n".join(filtered_probabilities)
             self.log_message(f"\n{self.name} -> OUTPUT PROBABILITIES: \n" + log_string)
+            self.log_message(f"State shape: {state.shape}")
 
         except Exception as e:
-            self.log_messate(traceback.print_exc())
-        pass
+            self.log_message(traceback.format_exc())
+
 
     @log_action
     @schedule_next_event

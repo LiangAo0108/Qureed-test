@@ -167,6 +167,14 @@ class Processor(GenericDevice):
             qin1_signal = signals.get("qin1", None)
             qin2_signal = signals.get("qin2", None)
             qin3_signal = signals.get("qin3", None)
+            print(f"qin0_signal: {qin0_signal}, qin1_signal: {qin0_signal}, qin2_signal: {qin0_signal}, qin3_signal: {qin0_signal}")
+            self.log_message(f"Received envelopes -> env0: {qin0_signal}, env1: {qin1_signal},"
+                             f" env2: {qin2_signal}, env3: {qin3_signal}")
+
+            if (qin0_signal is None) and (qin1_signal is None) and (qin2_signal is None) and (qin3_signal is None):
+                print("MZI has no input")
+                self.log_message("Processor received no input signals")
+                return
             # phase_shift = signals.get("phase_shift", None)
             # external_phase_shift = signals.get("external_phase_shift", None)
 
@@ -187,12 +195,6 @@ class Processor(GenericDevice):
                 env3 = Envelope()
             else:
                 env3 = signals["qin3"].contents
-
-            if (qin0_signal is None) and (qin1_signal is None) and (qin2_signal is None) and (qin3_signal is None):
-                print("MZI has no input")
-                self.log_message("MZI no input here")
-
-                return
 
             print(f"qin0_signal: {env0}, qin1_signal: {env1}, qin2_signal: {env2}, qin3_signal: {env3}")
             self.log_message(f"env0: {env0}, env1: {env1}, env2: {env2}, env3: {env3}")
