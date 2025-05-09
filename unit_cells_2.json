@@ -1,0 +1,1786 @@
+{
+  "devices": [
+    {
+      "device": "custom.devices.custom_source.CustomSource",
+      "location": [
+        5383.0,
+        5142.5
+      ],
+      "uuid": "ebc68c68-0a80-49e3-a6b6-30c0ca990c35",
+      "properties": {
+        "name": {
+          "type": "str",
+          "value": "S1"
+        },
+        "photonNum": {
+          "type": "int",
+          "value": "1"
+        },
+        "dimensions": {
+          "type": "int",
+          "value": "10"
+        }
+      }
+    },
+    {
+      "device": "custom.devices.custom_source.CustomSource",
+      "location": [
+        5392.0,
+        5293.5
+      ],
+      "uuid": "2485c0be-111b-4aba-9776-250b3acd7d8f",
+      "properties": {
+        "name": {
+          "type": "str",
+          "value": "S2"
+        },
+        "photonNum": {
+          "type": "int",
+          "value": "1"
+        },
+        "dimensions": {
+          "type": "int",
+          "value": "10"
+        }
+      }
+    },
+    {
+      "device": "custom.devices.custom_source.CustomSource",
+      "location": [
+        5396.0,
+        5450.5
+      ],
+      "uuid": "af9b286c-03c5-448e-b756-28dc50f16054",
+      "properties": {
+        "name": {
+          "type": "str",
+          "value": "S3"
+        },
+        "photonNum": {
+          "type": "int",
+          "value": "1"
+        },
+        "dimensions": {
+          "type": "int",
+          "value": "10"
+        }
+      }
+    },
+    {
+      "device": "custom.devices.custom_source.CustomSource",
+      "location": [
+        5405.0,
+        5627.5
+      ],
+      "uuid": "285ca401-0d54-40fe-bf31-3eb21cccb1d4",
+      "properties": {
+        "name": {
+          "type": "str",
+          "value": "S4"
+        },
+        "photonNum": {
+          "type": "int",
+          "value": "1"
+        },
+        "dimensions": {
+          "type": "int",
+          "value": "10"
+        }
+      }
+    },
+    {
+      "device": "qureed.devices.variables.time_variable.TimeVariable",
+      "location": [
+        5224.57861328125,
+        5625.0
+      ],
+      "uuid": "b255ae96-c7a6-4791-ba15-427ea5189b8e",
+      "properties": {
+        "name": {
+          "type": "str"
+        },
+        "value": {
+          "type": "float",
+          "value": "0.1"
+        }
+      }
+    },
+    {
+      "device": "qureed.devices.variables.time_variable.TimeVariable",
+      "location": [
+        5213.57861328125,
+        5450.0
+      ],
+      "uuid": "38e47b08-7054-40ad-8c6e-de62f7200a2e",
+      "properties": {
+        "name": {
+          "type": "str"
+        },
+        "value": {
+          "type": "float",
+          "value": "0.1"
+        }
+      }
+    },
+    {
+      "device": "qureed.devices.variables.time_variable.TimeVariable",
+      "location": [
+        5214.57861328125,
+        5293.0
+      ],
+      "uuid": "b6dfe5e6-ba83-44e2-bf08-7c7e10b19594",
+      "properties": {
+        "name": {
+          "type": "str"
+        },
+        "value": {
+          "type": "float",
+          "value": "0.1"
+        }
+      }
+    },
+    {
+      "device": "qureed.devices.variables.time_variable.TimeVariable",
+      "location": [
+        5183.57861328125,
+        5141.0
+      ],
+      "uuid": "3cf1ac84-effb-4d25-b055-b72e5d2fcab7",
+      "properties": {
+        "name": {
+          "type": "str"
+        },
+        "value": {
+          "type": "float",
+          "value": "0.1"
+        }
+      }
+    },
+    {
+      "device": "qureed.devices.control.simple_trigger.SimpleTrigger",
+      "location": [
+        5310.57861328125,
+        5625.0
+      ],
+      "uuid": "7423af93-174c-42d4-b2aa-7cae96b30fc3",
+      "properties": {
+        "name": {
+          "type": "str"
+        }
+      }
+    },
+    {
+      "device": "qureed.devices.control.simple_trigger.SimpleTrigger",
+      "location": [
+        5307.57861328125,
+        5451.0
+      ],
+      "uuid": "7dd3c7b3-56bd-4599-ba3d-3426716acb50",
+      "properties": {
+        "name": {
+          "type": "str"
+        }
+      }
+    },
+    {
+      "device": "qureed.devices.control.simple_trigger.SimpleTrigger",
+      "location": [
+        5297.57861328125,
+        5289.0
+      ],
+      "uuid": "d459eb20-e153-48ac-b07e-aa823efafd7c",
+      "properties": {
+        "name": {
+          "type": "str"
+        }
+      }
+    },
+    {
+      "device": "qureed.devices.control.simple_trigger.SimpleTrigger",
+      "location": [
+        5282.57861328125,
+        5147.0
+      ],
+      "uuid": "9f71bc41-8dd4-4127-9b3b-c1983fee27f0",
+      "properties": {
+        "name": {
+          "type": "str"
+        }
+      }
+    },
+    {
+      "device": "qureed.devices.phase_shifters.ideal_phase_shifter.IdealPhaseShifter",
+      "location": [
+        5558.57861328125,
+        5615.0
+      ],
+      "uuid": "3ff8731b-9e04-490c-b70c-df5fb3a74b07",
+      "properties": {
+        "name": {
+          "type": "str"
+        }
+      }
+    },
+    {
+      "device": "qureed.devices.phase_shifters.ideal_phase_shifter.IdealPhaseShifter",
+      "location": [
+        5543.57861328125,
+        5426.0
+      ],
+      "uuid": "d2074083-c69e-4cd3-9b91-86f21ce240ee",
+      "properties": {
+        "name": {
+          "type": "str"
+        }
+      }
+    },
+    {
+      "device": "qureed.devices.phase_shifters.ideal_phase_shifter.IdealPhaseShifter",
+      "location": [
+        5536.57861328125,
+        5293.0
+      ],
+      "uuid": "2279660d-dac1-4236-9ece-a44c90235b42",
+      "properties": {
+        "name": {
+          "type": "str"
+        }
+      }
+    },
+    {
+      "device": "qureed.devices.variables.float_variable.FloatVariable",
+      "location": [
+        5401.57861328125,
+        5558.0
+      ],
+      "uuid": "4c42a663-d2a5-4bb3-a6c3-f4d41e6c7e82",
+      "properties": {
+        "name": {
+          "type": "str"
+        },
+        "value": {
+          "type": "float",
+          "value": "3.1415"
+        }
+      }
+    },
+    {
+      "device": "qureed.devices.variables.float_variable.FloatVariable",
+      "location": [
+        5399.57861328125,
+        5391.0
+      ],
+      "uuid": "f3554665-376c-4250-8dfd-be61718c05da",
+      "properties": {
+        "name": {
+          "type": "str"
+        },
+        "value": {
+          "type": "float",
+          "value": "0.0"
+        }
+      }
+    },
+    {
+      "device": "qureed.devices.variables.float_variable.FloatVariable",
+      "location": [
+        5392.57861328125,
+        5236.0
+      ],
+      "uuid": "64395a78-0c38-4dad-9e11-fba674a9fe21",
+      "properties": {
+        "name": {
+          "type": "str"
+        },
+        "value": {
+          "type": "float",
+          "value": "3.1415"
+        }
+      }
+    },
+    {
+      "device": "qureed.devices.variables.float_variable.FloatVariable",
+      "location": [
+        5387.57861328125,
+        5085.0
+      ],
+      "uuid": "525e36f3-a634-4b8f-af3d-59d27af43d30",
+      "properties": {
+        "name": {
+          "type": "str"
+        },
+        "value": {
+          "type": "float",
+          "value": "0.0"
+        }
+      }
+    },
+    {
+      "device": "custom.devices.unit_cell.UnitCell",
+      "location": [
+        5856.57861328125,
+        5196.5
+      ],
+      "uuid": "0233ee3e-948c-4650-8b4e-a04d68f0cda3",
+      "properties": {
+        "name": {
+          "type": "str",
+          "value": "U1"
+        }
+      }
+    },
+    {
+      "device": "custom.devices.unit_cell.UnitCell",
+      "location": [
+        5883.57861328125,
+        5523.5
+      ],
+      "uuid": "dc4b6a03-4f24-4a66-b576-e5e50581294d",
+      "properties": {
+        "name": {
+          "type": "str",
+          "value": "U2"
+        }
+      }
+    },
+    {
+      "device": "qureed.devices.variables.float_variable.FloatVariable",
+      "location": [
+        5787.57861328125,
+        5626.0
+      ],
+      "uuid": "49eb939d-70ae-4a33-8be3-f197ca45e1de",
+      "properties": {
+        "name": {
+          "type": "str"
+        },
+        "value": {
+          "type": "float",
+          "value": "3.1415"
+        }
+      }
+    },
+    {
+      "device": "qureed.devices.variables.float_variable.FloatVariable",
+      "location": [
+        5782.57861328125,
+        5568.0
+      ],
+      "uuid": "797a9b86-93e7-4d35-beab-07fcf96371ac",
+      "properties": {
+        "name": {
+          "type": "str"
+        },
+        "value": {
+          "type": "float",
+          "value": "1.57"
+        }
+      }
+    },
+    {
+      "device": "qureed.devices.variables.float_variable.FloatVariable",
+      "location": [
+        5749.57861328125,
+        5303.0
+      ],
+      "uuid": "b7a75424-e7fe-4ea6-aab1-c3867ee7abb6",
+      "properties": {
+        "name": {
+          "type": "str"
+        },
+        "value": {
+          "type": "float",
+          "value": "3.1415"
+        }
+      }
+    },
+    {
+      "device": "qureed.devices.variables.float_variable.FloatVariable",
+      "location": [
+        5747.57861328125,
+        5246.0
+      ],
+      "uuid": "9fb07add-1606-40b4-ba09-47f966b3b737",
+      "properties": {
+        "name": {
+          "type": "str"
+        },
+        "value": {
+          "type": "float",
+          "value": "1.57"
+        }
+      }
+    },
+    {
+      "device": "custom.devices.unit_cell.UnitCell",
+      "location": [
+        6121.57861328125,
+        5359.5
+      ],
+      "uuid": "4d212703-e548-4970-9f06-c7acaefe31ae",
+      "properties": {
+        "name": {
+          "type": "str",
+          "value": "U3"
+        }
+      }
+    },
+    {
+      "device": "custom.devices.custom_delay.CustomDelay",
+      "location": [
+        5622.57861328125,
+        5286.5
+      ],
+      "uuid": "9f4eff27-6a67-45a4-9cf6-fc923c7d5896",
+      "properties": {
+        "name": {
+          "type": "str"
+        },
+        "delay": {
+          "type": "float"
+        }
+      }
+    },
+    {
+      "device": "custom.devices.custom_delay.CustomDelay",
+      "location": [
+        5630.57861328125,
+        5168.5
+      ],
+      "uuid": "abde0bf4-1228-4d5e-8693-ea20240e27fb",
+      "properties": {
+        "name": {
+          "type": "str"
+        },
+        "delay": {
+          "type": "float"
+        }
+      }
+    },
+    {
+      "device": "qureed.devices.phase_shifters.ideal_phase_shifter.IdealPhaseShifter",
+      "location": [
+        5521.57861328125,
+        5137.0
+      ],
+      "uuid": "d64bd5c6-ec2b-4e36-b7d9-394d6ca842c8",
+      "properties": {
+        "name": {
+          "type": "str"
+        }
+      }
+    },
+    {
+      "device": "custom.devices.custom_delay.CustomDelay",
+      "location": [
+        5625.57861328125,
+        5425.5
+      ],
+      "uuid": "c30718f1-90a8-4c69-ac08-d655c6ceae2d",
+      "properties": {
+        "name": {
+          "type": "str"
+        },
+        "delay": {
+          "type": "float"
+        }
+      }
+    },
+    {
+      "device": "custom.devices.custom_delay.CustomDelay",
+      "location": [
+        5645.57861328125,
+        5614.5
+      ],
+      "uuid": "d2558293-15fd-452f-9624-5ff274cfdc42",
+      "properties": {
+        "name": {
+          "type": "str"
+        },
+        "delay": {
+          "type": "float"
+        }
+      }
+    },
+    {
+      "device": "custom.devices.custom_delay.CustomDelay",
+      "location": [
+        5943.57861328125,
+        5184.5
+      ],
+      "uuid": "a6dbebd3-77f9-43fe-abfe-39623a46569e",
+      "properties": {
+        "name": {
+          "type": "str"
+        },
+        "delay": {
+          "type": "float"
+        }
+      }
+    },
+    {
+      "device": "custom.devices.custom_delay.CustomDelay",
+      "location": [
+        5943.57861328125,
+        5233.5
+      ],
+      "uuid": "351b021d-1365-43a3-95ed-516da318e083",
+      "properties": {
+        "name": {
+          "type": "str"
+        },
+        "delay": {
+          "type": "float"
+        }
+      }
+    },
+    {
+      "device": "custom.devices.custom_delay.CustomDelay",
+      "location": [
+        5966.57861328125,
+        5520.5
+      ],
+      "uuid": "09072ecd-084a-4b27-9770-0006036176c4",
+      "properties": {
+        "name": {
+          "type": "str"
+        },
+        "delay": {
+          "type": "float"
+        }
+      }
+    },
+    {
+      "device": "custom.devices.custom_delay.CustomDelay",
+      "location": [
+        5967.57861328125,
+        5566.5
+      ],
+      "uuid": "d8322f8f-9e2f-43a4-9820-83bae17728cf",
+      "properties": {
+        "name": {
+          "type": "str"
+        },
+        "delay": {
+          "type": "float"
+        }
+      }
+    },
+    {
+      "device": "custom.devices.custom_delay.CustomDelay",
+      "location": [
+        6208.57861328125,
+        5356.5
+      ],
+      "uuid": "29e65fac-b262-4fc3-826c-ba520491c034",
+      "properties": {
+        "name": {
+          "type": "str"
+        },
+        "delay": {
+          "type": "float"
+        }
+      }
+    },
+    {
+      "device": "custom.devices.custom_delay.CustomDelay",
+      "location": [
+        6208.57861328125,
+        5403.5
+      ],
+      "uuid": "645e2561-9151-474c-be86-b216efa45f37",
+      "properties": {
+        "name": {
+          "type": "str"
+        },
+        "delay": {
+          "type": "float"
+        }
+      }
+    },
+    {
+      "device": "qureed.devices.variables.float_variable.FloatVariable",
+      "location": [
+        6023.224609375,
+        5466.0
+      ],
+      "uuid": "8f763754-b086-4911-bff0-4f34418c87ac",
+      "properties": {
+        "name": {
+          "type": "str"
+        },
+        "value": {
+          "type": "float",
+          "value": "0.0"
+        }
+      }
+    },
+    {
+      "device": "qureed.devices.variables.float_variable.FloatVariable",
+      "location": [
+        6022.224609375,
+        5412.0
+      ],
+      "uuid": "174ab6f7-0a33-45fb-81ed-91ffeea8446d",
+      "properties": {
+        "name": {
+          "type": "str"
+        },
+        "value": {
+          "type": "float",
+          "value": "0.0"
+        }
+      }
+    },
+    {
+      "device": "custom.devices.custom_delay.CustomDelay",
+      "location": [
+        6203.224609375,
+        5195.5
+      ],
+      "uuid": "b482b86a-cd62-40ca-94a4-cb74f4b6c36c",
+      "properties": {
+        "name": {
+          "type": "str"
+        },
+        "delay": {
+          "type": "float"
+        }
+      }
+    },
+    {
+      "device": "custom.devices.custom_delay.CustomDelay",
+      "location": [
+        6216.224609375,
+        5564.5
+      ],
+      "uuid": "8d0e23a4-fbb2-442a-b902-09b4369430a2",
+      "properties": {
+        "name": {
+          "type": "str"
+        },
+        "delay": {
+          "type": "float"
+        }
+      }
+    },
+    {
+      "device": "custom.devices.unit_cell.UnitCell",
+      "location": [
+        6502.2802734375,
+        5204.5
+      ],
+      "uuid": "f52e4fcf-1115-488b-9fb4-87efd551ed56",
+      "properties": {
+        "name": {
+          "type": "str"
+        }
+      }
+    },
+    {
+      "device": "custom.devices.unit_cell.UnitCell",
+      "location": [
+        6500.2802734375,
+        5502.5
+      ],
+      "uuid": "02c7e6c9-ef5b-4651-a9cf-64ebf0c9c452",
+      "properties": {
+        "name": {
+          "type": "str"
+        }
+      }
+    },
+    {
+      "device": "qureed.devices.variables.float_variable.FloatVariable",
+      "location": [
+        6429.2802734375,
+        5310.0
+      ],
+      "uuid": "fd3377d4-d4a9-46f9-96b9-c30952acc2f4",
+      "properties": {
+        "name": {
+          "type": "str",
+          "value": "0.0"
+        },
+        "value": {
+          "type": "float",
+          "value": "0.0"
+        }
+      }
+    },
+    {
+      "device": "qureed.devices.variables.float_variable.FloatVariable",
+      "location": [
+        6407.2802734375,
+        5230.0
+      ],
+      "uuid": "6b193c9f-a8e6-4306-8050-98e48b880d95",
+      "properties": {
+        "name": {
+          "type": "str"
+        },
+        "value": {
+          "type": "float",
+          "value": "1.57"
+        }
+      }
+    },
+    {
+      "device": "qureed.devices.variables.float_variable.FloatVariable",
+      "location": [
+        6391.2802734375,
+        5625.0
+      ],
+      "uuid": "4eaa2a61-3c35-4f92-86c4-129b62c2b578",
+      "properties": {
+        "name": {
+          "type": "str"
+        },
+        "value": {
+          "type": "float",
+          "value": "3.1415"
+        }
+      }
+    },
+    {
+      "device": "qureed.devices.variables.float_variable.FloatVariable",
+      "location": [
+        6393.2802734375,
+        5570.0
+      ],
+      "uuid": "340e9b5e-c3e8-4cf1-824f-2c0137a8ee68",
+      "properties": {
+        "name": {
+          "type": "str"
+        },
+        "value": {
+          "type": "float",
+          "value": "1.57"
+        }
+      }
+    },
+    {
+      "device": "custom.devices.unit_cell.UnitCell",
+      "location": [
+        6763.71240234375,
+        5369.5
+      ],
+      "uuid": "00aed471-84ed-4da9-b265-a6b45d08e282",
+      "properties": {
+        "name": {
+          "type": "str"
+        }
+      }
+    },
+    {
+      "device": "custom.devices.custom_delay.CustomDelay",
+      "location": [
+        6587.71240234375,
+        5202.5
+      ],
+      "uuid": "02dcb0f6-2cb1-4404-8e0e-7f83e9a1bd5f",
+      "properties": {
+        "name": {
+          "type": "str"
+        },
+        "delay": {
+          "type": "float"
+        }
+      }
+    },
+    {
+      "device": "custom.devices.custom_delay.CustomDelay",
+      "location": [
+        6587.751953125,
+        5253.5
+      ],
+      "uuid": "7ff075e5-c6f8-4b12-84c9-6349dabed93b",
+      "properties": {
+        "name": {
+          "type": "str"
+        },
+        "delay": {
+          "type": "float"
+        }
+      }
+    },
+    {
+      "device": "custom.devices.custom_delay.CustomDelay",
+      "location": [
+        6583.751953125,
+        5502.5
+      ],
+      "uuid": "3507fcb6-4f10-459b-a98d-79123a030f19",
+      "properties": {
+        "name": {
+          "type": "str"
+        },
+        "delay": {
+          "type": "float"
+        }
+      }
+    },
+    {
+      "device": "custom.devices.custom_delay.CustomDelay",
+      "location": [
+        6583.751953125,
+        5553.5
+      ],
+      "uuid": "7ec4ce11-4ee8-4a41-bfa5-84674eff4639",
+      "properties": {
+        "name": {
+          "type": "str"
+        },
+        "delay": {
+          "type": "float"
+        }
+      }
+    },
+    {
+      "device": "custom.devices.custom_delay.CustomDelay",
+      "location": [
+        6896.751953125,
+        5204.5
+      ],
+      "uuid": "59bc86fd-7184-4d6a-9a05-fe4b6151eb03",
+      "properties": {
+        "name": {
+          "type": "str"
+        },
+        "delay": {
+          "type": "float"
+        }
+      }
+    },
+    {
+      "device": "custom.devices.custom_delay.CustomDelay",
+      "location": [
+        6885.72412109375,
+        5375.5
+      ],
+      "uuid": "ebd10ce7-e410-4291-968b-d0397516a866",
+      "properties": {
+        "name": {
+          "type": "str"
+        },
+        "delay": {
+          "type": "float"
+        }
+      }
+    },
+    {
+      "device": "custom.devices.custom_delay.CustomDelay",
+      "location": [
+        6886.72412109375,
+        5451.5
+      ],
+      "uuid": "fc191f3b-ff29-4a39-b63e-589e9f617c91",
+      "properties": {
+        "name": {
+          "type": "str"
+        },
+        "delay": {
+          "type": "float"
+        }
+      }
+    },
+    {
+      "device": "custom.devices.custom_delay.CustomDelay",
+      "location": [
+        6898.72412109375,
+        5587.5
+      ],
+      "uuid": "b99d3256-ec8e-4e39-85cf-7b6776e47db7",
+      "properties": {
+        "name": {
+          "type": "str"
+        },
+        "delay": {
+          "type": "float"
+        }
+      }
+    },
+    {
+      "device": "custom.devices.fourmodeinspector.FourModeInspector",
+      "location": [
+        7231.72412109375,
+        5404.5
+      ],
+      "uuid": "8c266867-57f2-41bb-b51a-36190aedf985",
+      "properties": {
+        "name": {
+          "type": "str",
+          "value": "INSPECTOR"
+        }
+      }
+    },
+    {
+      "device": "qureed.devices.variables.float_variable.FloatVariable",
+      "location": [
+        6658.72412109375,
+        5468.0
+      ],
+      "uuid": "f86e5cd9-366d-4a5f-ac48-257640251572",
+      "properties": {
+        "name": {
+          "type": "str"
+        },
+        "value": {
+          "type": "float",
+          "value": "0.0"
+        }
+      }
+    },
+    {
+      "device": "qureed.devices.variables.float_variable.FloatVariable",
+      "location": [
+        6653.72412109375,
+        5410.0
+      ],
+      "uuid": "b1bdbcad-855f-4219-9d3a-32fdddf0ef97",
+      "properties": {
+        "name": {
+          "type": "str"
+        },
+        "value": {
+          "type": "float",
+          "value": "0.0"
+        }
+      }
+    }
+  ],
+  "connections": [
+    {
+      "signal": "qureed.signals.generic_bool_signal.GenericBoolSignal",
+      "conn": [
+        {
+          "device_uuid": "9f71bc41-8dd4-4127-9b3b-c1983fee27f0",
+          "port": "trigger"
+        },
+        {
+          "device_uuid": "ebc68c68-0a80-49e3-a6b6-30c0ca990c35",
+          "port": "trigger"
+        }
+      ]
+    },
+    {
+      "signal": "qureed.signals.generic_bool_signal.GenericBoolSignal",
+      "conn": [
+        {
+          "device_uuid": "d459eb20-e153-48ac-b07e-aa823efafd7c",
+          "port": "trigger"
+        },
+        {
+          "device_uuid": "2485c0be-111b-4aba-9776-250b3acd7d8f",
+          "port": "trigger"
+        }
+      ]
+    },
+    {
+      "signal": "qureed.signals.generic_bool_signal.GenericBoolSignal",
+      "conn": [
+        {
+          "device_uuid": "7dd3c7b3-56bd-4599-ba3d-3426716acb50",
+          "port": "trigger"
+        },
+        {
+          "device_uuid": "af9b286c-03c5-448e-b756-28dc50f16054",
+          "port": "trigger"
+        }
+      ]
+    },
+    {
+      "signal": "qureed.signals.generic_bool_signal.GenericBoolSignal",
+      "conn": [
+        {
+          "device_uuid": "7423af93-174c-42d4-b2aa-7cae96b30fc3",
+          "port": "trigger"
+        },
+        {
+          "device_uuid": "285ca401-0d54-40fe-bf31-3eb21cccb1d4",
+          "port": "trigger"
+        }
+      ]
+    },
+    {
+      "signal": "qureed.signals.generic_time_signal.GenericTimeSignal",
+      "conn": [
+        {
+          "device_uuid": "3cf1ac84-effb-4d25-b055-b72e5d2fcab7",
+          "port": "time"
+        },
+        {
+          "device_uuid": "9f71bc41-8dd4-4127-9b3b-c1983fee27f0",
+          "port": "time"
+        }
+      ]
+    },
+    {
+      "signal": "qureed.signals.generic_time_signal.GenericTimeSignal",
+      "conn": [
+        {
+          "device_uuid": "b6dfe5e6-ba83-44e2-bf08-7c7e10b19594",
+          "port": "time"
+        },
+        {
+          "device_uuid": "d459eb20-e153-48ac-b07e-aa823efafd7c",
+          "port": "time"
+        }
+      ]
+    },
+    {
+      "signal": "qureed.signals.generic_time_signal.GenericTimeSignal",
+      "conn": [
+        {
+          "device_uuid": "38e47b08-7054-40ad-8c6e-de62f7200a2e",
+          "port": "time"
+        },
+        {
+          "device_uuid": "7dd3c7b3-56bd-4599-ba3d-3426716acb50",
+          "port": "time"
+        }
+      ]
+    },
+    {
+      "signal": "qureed.signals.generic_time_signal.GenericTimeSignal",
+      "conn": [
+        {
+          "device_uuid": "b255ae96-c7a6-4791-ba15-427ea5189b8e",
+          "port": "time"
+        },
+        {
+          "device_uuid": "7423af93-174c-42d4-b2aa-7cae96b30fc3",
+          "port": "time"
+        }
+      ]
+    },
+    {
+      "signal": "qureed.signals.generic_quantum_signal.GenericQuantumSignal",
+      "conn": [
+        {
+          "device_uuid": "2485c0be-111b-4aba-9776-250b3acd7d8f",
+          "port": "out"
+        },
+        {
+          "device_uuid": "2279660d-dac1-4236-9ece-a44c90235b42",
+          "port": "input"
+        }
+      ]
+    },
+    {
+      "signal": "qureed.signals.generic_quantum_signal.GenericQuantumSignal",
+      "conn": [
+        {
+          "device_uuid": "af9b286c-03c5-448e-b756-28dc50f16054",
+          "port": "out"
+        },
+        {
+          "device_uuid": "d2074083-c69e-4cd3-9b91-86f21ce240ee",
+          "port": "input"
+        }
+      ]
+    },
+    {
+      "signal": "qureed.signals.generic_quantum_signal.GenericQuantumSignal",
+      "conn": [
+        {
+          "device_uuid": "285ca401-0d54-40fe-bf31-3eb21cccb1d4",
+          "port": "out"
+        },
+        {
+          "device_uuid": "3ff8731b-9e04-490c-b70c-df5fb3a74b07",
+          "port": "input"
+        }
+      ]
+    },
+    {
+      "signal": "qureed.signals.generic_float_signal.GenericFloatSignal",
+      "conn": [
+        {
+          "device_uuid": "64395a78-0c38-4dad-9e11-fba674a9fe21",
+          "port": "float"
+        },
+        {
+          "device_uuid": "2279660d-dac1-4236-9ece-a44c90235b42",
+          "port": "theta"
+        }
+      ]
+    },
+    {
+      "signal": "qureed.signals.generic_float_signal.GenericFloatSignal",
+      "conn": [
+        {
+          "device_uuid": "f3554665-376c-4250-8dfd-be61718c05da",
+          "port": "float"
+        },
+        {
+          "device_uuid": "d2074083-c69e-4cd3-9b91-86f21ce240ee",
+          "port": "theta"
+        }
+      ]
+    },
+    {
+      "signal": "qureed.signals.generic_float_signal.GenericFloatSignal",
+      "conn": [
+        {
+          "device_uuid": "4c42a663-d2a5-4bb3-a6c3-f4d41e6c7e82",
+          "port": "float"
+        },
+        {
+          "device_uuid": "3ff8731b-9e04-490c-b70c-df5fb3a74b07",
+          "port": "theta"
+        }
+      ]
+    },
+    {
+      "signal": "qureed.signals.generic_float_signal.GenericFloatSignal",
+      "conn": [
+        {
+          "device_uuid": "9fb07add-1606-40b4-ba09-47f966b3b737",
+          "port": "float"
+        },
+        {
+          "device_uuid": "0233ee3e-948c-4650-8b4e-a04d68f0cda3",
+          "port": "phase_shift"
+        }
+      ]
+    },
+    {
+      "signal": "qureed.signals.generic_float_signal.GenericFloatSignal",
+      "conn": [
+        {
+          "device_uuid": "b7a75424-e7fe-4ea6-aab1-c3867ee7abb6",
+          "port": "float"
+        },
+        {
+          "device_uuid": "0233ee3e-948c-4650-8b4e-a04d68f0cda3",
+          "port": "external_phase_shift"
+        }
+      ]
+    },
+    {
+      "signal": "qureed.signals.generic_float_signal.GenericFloatSignal",
+      "conn": [
+        {
+          "device_uuid": "797a9b86-93e7-4d35-beab-07fcf96371ac",
+          "port": "float"
+        },
+        {
+          "device_uuid": "dc4b6a03-4f24-4a66-b576-e5e50581294d",
+          "port": "phase_shift"
+        }
+      ]
+    },
+    {
+      "signal": "qureed.signals.generic_float_signal.GenericFloatSignal",
+      "conn": [
+        {
+          "device_uuid": "49eb939d-70ae-4a33-8be3-f197ca45e1de",
+          "port": "float"
+        },
+        {
+          "device_uuid": "dc4b6a03-4f24-4a66-b576-e5e50581294d",
+          "port": "external_phase_shift"
+        }
+      ]
+    },
+    {
+      "signal": "qureed.signals.generic_quantum_signal.GenericQuantumSignal",
+      "conn": [
+        {
+          "device_uuid": "2279660d-dac1-4236-9ece-a44c90235b42",
+          "port": "output"
+        },
+        {
+          "device_uuid": "9f4eff27-6a67-45a4-9cf6-fc923c7d5896",
+          "port": "in"
+        }
+      ]
+    },
+    {
+      "signal": "qureed.signals.generic_quantum_signal.GenericQuantumSignal",
+      "conn": [
+        {
+          "device_uuid": "0233ee3e-948c-4650-8b4e-a04d68f0cda3",
+          "port": "qin1"
+        },
+        {
+          "device_uuid": "9f4eff27-6a67-45a4-9cf6-fc923c7d5896",
+          "port": "out"
+        }
+      ]
+    },
+    {
+      "signal": "qureed.signals.generic_quantum_signal.GenericQuantumSignal",
+      "conn": [
+        {
+          "device_uuid": "ebc68c68-0a80-49e3-a6b6-30c0ca990c35",
+          "port": "out"
+        },
+        {
+          "device_uuid": "d64bd5c6-ec2b-4e36-b7d9-394d6ca842c8",
+          "port": "input"
+        }
+      ]
+    },
+    {
+      "signal": "qureed.signals.generic_float_signal.GenericFloatSignal",
+      "conn": [
+        {
+          "device_uuid": "525e36f3-a634-4b8f-af3d-59d27af43d30",
+          "port": "float"
+        },
+        {
+          "device_uuid": "d64bd5c6-ec2b-4e36-b7d9-394d6ca842c8",
+          "port": "theta"
+        }
+      ]
+    },
+    {
+      "signal": "qureed.signals.generic_quantum_signal.GenericQuantumSignal",
+      "conn": [
+        {
+          "device_uuid": "d64bd5c6-ec2b-4e36-b7d9-394d6ca842c8",
+          "port": "output"
+        },
+        {
+          "device_uuid": "abde0bf4-1228-4d5e-8693-ea20240e27fb",
+          "port": "in"
+        }
+      ]
+    },
+    {
+      "signal": "qureed.signals.generic_quantum_signal.GenericQuantumSignal",
+      "conn": [
+        {
+          "device_uuid": "abde0bf4-1228-4d5e-8693-ea20240e27fb",
+          "port": "out"
+        },
+        {
+          "device_uuid": "0233ee3e-948c-4650-8b4e-a04d68f0cda3",
+          "port": "qin0"
+        }
+      ]
+    },
+    {
+      "signal": "qureed.signals.generic_quantum_signal.GenericQuantumSignal",
+      "conn": [
+        {
+          "device_uuid": "3ff8731b-9e04-490c-b70c-df5fb3a74b07",
+          "port": "output"
+        },
+        {
+          "device_uuid": "d2558293-15fd-452f-9624-5ff274cfdc42",
+          "port": "in"
+        }
+      ]
+    },
+    {
+      "signal": "qureed.signals.generic_quantum_signal.GenericQuantumSignal",
+      "conn": [
+        {
+          "device_uuid": "d2074083-c69e-4cd3-9b91-86f21ce240ee",
+          "port": "output"
+        },
+        {
+          "device_uuid": "c30718f1-90a8-4c69-ac08-d655c6ceae2d",
+          "port": "in"
+        }
+      ]
+    },
+    {
+      "signal": "qureed.signals.generic_quantum_signal.GenericQuantumSignal",
+      "conn": [
+        {
+          "device_uuid": "c30718f1-90a8-4c69-ac08-d655c6ceae2d",
+          "port": "out"
+        },
+        {
+          "device_uuid": "dc4b6a03-4f24-4a66-b576-e5e50581294d",
+          "port": "qin0"
+        }
+      ]
+    },
+    {
+      "signal": "qureed.signals.generic_quantum_signal.GenericQuantumSignal",
+      "conn": [
+        {
+          "device_uuid": "d2558293-15fd-452f-9624-5ff274cfdc42",
+          "port": "out"
+        },
+        {
+          "device_uuid": "dc4b6a03-4f24-4a66-b576-e5e50581294d",
+          "port": "qin1"
+        }
+      ]
+    },
+    {
+      "signal": "qureed.signals.generic_quantum_signal.GenericQuantumSignal",
+      "conn": [
+        {
+          "device_uuid": "0233ee3e-948c-4650-8b4e-a04d68f0cda3",
+          "port": "qout0"
+        },
+        {
+          "device_uuid": "a6dbebd3-77f9-43fe-abfe-39623a46569e",
+          "port": "in"
+        }
+      ]
+    },
+    {
+      "signal": "qureed.signals.generic_quantum_signal.GenericQuantumSignal",
+      "conn": [
+        {
+          "device_uuid": "0233ee3e-948c-4650-8b4e-a04d68f0cda3",
+          "port": "qout1"
+        },
+        {
+          "device_uuid": "351b021d-1365-43a3-95ed-516da318e083",
+          "port": "in"
+        }
+      ]
+    },
+    {
+      "signal": "qureed.signals.generic_quantum_signal.GenericQuantumSignal",
+      "conn": [
+        {
+          "device_uuid": "dc4b6a03-4f24-4a66-b576-e5e50581294d",
+          "port": "qout0"
+        },
+        {
+          "device_uuid": "09072ecd-084a-4b27-9770-0006036176c4",
+          "port": "in"
+        }
+      ]
+    },
+    {
+      "signal": "qureed.signals.generic_quantum_signal.GenericQuantumSignal",
+      "conn": [
+        {
+          "device_uuid": "dc4b6a03-4f24-4a66-b576-e5e50581294d",
+          "port": "qout1"
+        },
+        {
+          "device_uuid": "d8322f8f-9e2f-43a4-9820-83bae17728cf",
+          "port": "in"
+        }
+      ]
+    },
+    {
+      "signal": "qureed.signals.generic_quantum_signal.GenericQuantumSignal",
+      "conn": [
+        {
+          "device_uuid": "351b021d-1365-43a3-95ed-516da318e083",
+          "port": "out"
+        },
+        {
+          "device_uuid": "4d212703-e548-4970-9f06-c7acaefe31ae",
+          "port": "qin0"
+        }
+      ]
+    },
+    {
+      "signal": "qureed.signals.generic_quantum_signal.GenericQuantumSignal",
+      "conn": [
+        {
+          "device_uuid": "09072ecd-084a-4b27-9770-0006036176c4",
+          "port": "out"
+        },
+        {
+          "device_uuid": "4d212703-e548-4970-9f06-c7acaefe31ae",
+          "port": "qin1"
+        }
+      ]
+    },
+    {
+      "signal": "qureed.signals.generic_float_signal.GenericFloatSignal",
+      "conn": [
+        {
+          "device_uuid": "174ab6f7-0a33-45fb-81ed-91ffeea8446d",
+          "port": "float"
+        },
+        {
+          "device_uuid": "4d212703-e548-4970-9f06-c7acaefe31ae",
+          "port": "phase_shift"
+        }
+      ]
+    },
+    {
+      "signal": "qureed.signals.generic_float_signal.GenericFloatSignal",
+      "conn": [
+        {
+          "device_uuid": "8f763754-b086-4911-bff0-4f34418c87ac",
+          "port": "float"
+        },
+        {
+          "device_uuid": "4d212703-e548-4970-9f06-c7acaefe31ae",
+          "port": "external_phase_shift"
+        }
+      ]
+    },
+    {
+      "signal": "qureed.signals.generic_quantum_signal.GenericQuantumSignal",
+      "conn": [
+        {
+          "device_uuid": "4d212703-e548-4970-9f06-c7acaefe31ae",
+          "port": "qout0"
+        },
+        {
+          "device_uuid": "29e65fac-b262-4fc3-826c-ba520491c034",
+          "port": "in"
+        }
+      ]
+    },
+    {
+      "signal": "qureed.signals.generic_quantum_signal.GenericQuantumSignal",
+      "conn": [
+        {
+          "device_uuid": "4d212703-e548-4970-9f06-c7acaefe31ae",
+          "port": "qout1"
+        },
+        {
+          "device_uuid": "645e2561-9151-474c-be86-b216efa45f37",
+          "port": "in"
+        }
+      ]
+    },
+    {
+      "signal": "qureed.signals.generic_quantum_signal.GenericQuantumSignal",
+      "conn": [
+        {
+          "device_uuid": "d8322f8f-9e2f-43a4-9820-83bae17728cf",
+          "port": "out"
+        },
+        {
+          "device_uuid": "8d0e23a4-fbb2-442a-b902-09b4369430a2",
+          "port": "in"
+        }
+      ]
+    },
+    {
+      "signal": "qureed.signals.generic_quantum_signal.GenericQuantumSignal",
+      "conn": [
+        {
+          "device_uuid": "a6dbebd3-77f9-43fe-abfe-39623a46569e",
+          "port": "out"
+        },
+        {
+          "device_uuid": "b482b86a-cd62-40ca-94a4-cb74f4b6c36c",
+          "port": "in"
+        }
+      ]
+    },
+    {
+      "signal": "qureed.signals.generic_quantum_signal.GenericQuantumSignal",
+      "conn": [
+        {
+          "device_uuid": "b482b86a-cd62-40ca-94a4-cb74f4b6c36c",
+          "port": "out"
+        },
+        {
+          "device_uuid": "f52e4fcf-1115-488b-9fb4-87efd551ed56",
+          "port": "qin0"
+        }
+      ]
+    },
+    {
+      "signal": "qureed.signals.generic_quantum_signal.GenericQuantumSignal",
+      "conn": [
+        {
+          "device_uuid": "29e65fac-b262-4fc3-826c-ba520491c034",
+          "port": "out"
+        },
+        {
+          "device_uuid": "f52e4fcf-1115-488b-9fb4-87efd551ed56",
+          "port": "qin1"
+        }
+      ]
+    },
+    {
+      "signal": "qureed.signals.generic_quantum_signal.GenericQuantumSignal",
+      "conn": [
+        {
+          "device_uuid": "645e2561-9151-474c-be86-b216efa45f37",
+          "port": "out"
+        },
+        {
+          "device_uuid": "02c7e6c9-ef5b-4651-a9cf-64ebf0c9c452",
+          "port": "qin0"
+        }
+      ]
+    },
+    {
+      "signal": "qureed.signals.generic_quantum_signal.GenericQuantumSignal",
+      "conn": [
+        {
+          "device_uuid": "8d0e23a4-fbb2-442a-b902-09b4369430a2",
+          "port": "out"
+        },
+        {
+          "device_uuid": "02c7e6c9-ef5b-4651-a9cf-64ebf0c9c452",
+          "port": "qin1"
+        }
+      ]
+    },
+    {
+      "signal": "qureed.signals.generic_float_signal.GenericFloatSignal",
+      "conn": [
+        {
+          "device_uuid": "6b193c9f-a8e6-4306-8050-98e48b880d95",
+          "port": "float"
+        },
+        {
+          "device_uuid": "f52e4fcf-1115-488b-9fb4-87efd551ed56",
+          "port": "phase_shift"
+        }
+      ]
+    },
+    {
+      "signal": "qureed.signals.generic_float_signal.GenericFloatSignal",
+      "conn": [
+        {
+          "device_uuid": "fd3377d4-d4a9-46f9-96b9-c30952acc2f4",
+          "port": "float"
+        },
+        {
+          "device_uuid": "f52e4fcf-1115-488b-9fb4-87efd551ed56",
+          "port": "external_phase_shift"
+        }
+      ]
+    },
+    {
+      "signal": "qureed.signals.generic_float_signal.GenericFloatSignal",
+      "conn": [
+        {
+          "device_uuid": "340e9b5e-c3e8-4cf1-824f-2c0137a8ee68",
+          "port": "float"
+        },
+        {
+          "device_uuid": "02c7e6c9-ef5b-4651-a9cf-64ebf0c9c452",
+          "port": "phase_shift"
+        }
+      ]
+    },
+    {
+      "signal": "qureed.signals.generic_float_signal.GenericFloatSignal",
+      "conn": [
+        {
+          "device_uuid": "02c7e6c9-ef5b-4651-a9cf-64ebf0c9c452",
+          "port": "external_phase_shift"
+        },
+        {
+          "device_uuid": "4eaa2a61-3c35-4f92-86c4-129b62c2b578",
+          "port": "float"
+        }
+      ]
+    },
+    {
+      "signal": "qureed.signals.generic_quantum_signal.GenericQuantumSignal",
+      "conn": [
+        {
+          "device_uuid": "f52e4fcf-1115-488b-9fb4-87efd551ed56",
+          "port": "qout0"
+        },
+        {
+          "device_uuid": "02dcb0f6-2cb1-4404-8e0e-7f83e9a1bd5f",
+          "port": "in"
+        }
+      ]
+    },
+    {
+      "signal": "qureed.signals.generic_quantum_signal.GenericQuantumSignal",
+      "conn": [
+        {
+          "device_uuid": "f52e4fcf-1115-488b-9fb4-87efd551ed56",
+          "port": "qout1"
+        },
+        {
+          "device_uuid": "7ff075e5-c6f8-4b12-84c9-6349dabed93b",
+          "port": "in"
+        }
+      ]
+    },
+    {
+      "signal": "qureed.signals.generic_quantum_signal.GenericQuantumSignal",
+      "conn": [
+        {
+          "device_uuid": "02c7e6c9-ef5b-4651-a9cf-64ebf0c9c452",
+          "port": "qout0"
+        },
+        {
+          "device_uuid": "3507fcb6-4f10-459b-a98d-79123a030f19",
+          "port": "in"
+        }
+      ]
+    },
+    {
+      "signal": "qureed.signals.generic_quantum_signal.GenericQuantumSignal",
+      "conn": [
+        {
+          "device_uuid": "02c7e6c9-ef5b-4651-a9cf-64ebf0c9c452",
+          "port": "qout1"
+        },
+        {
+          "device_uuid": "7ec4ce11-4ee8-4a41-bfa5-84674eff4639",
+          "port": "in"
+        }
+      ]
+    },
+    {
+      "signal": "qureed.signals.generic_quantum_signal.GenericQuantumSignal",
+      "conn": [
+        {
+          "device_uuid": "3507fcb6-4f10-459b-a98d-79123a030f19",
+          "port": "out"
+        },
+        {
+          "device_uuid": "00aed471-84ed-4da9-b265-a6b45d08e282",
+          "port": "qin1"
+        }
+      ]
+    },
+    {
+      "signal": "qureed.signals.generic_quantum_signal.GenericQuantumSignal",
+      "conn": [
+        {
+          "device_uuid": "7ff075e5-c6f8-4b12-84c9-6349dabed93b",
+          "port": "out"
+        },
+        {
+          "device_uuid": "00aed471-84ed-4da9-b265-a6b45d08e282",
+          "port": "qin0"
+        }
+      ]
+    },
+    {
+      "signal": "qureed.signals.generic_quantum_signal.GenericQuantumSignal",
+      "conn": [
+        {
+          "device_uuid": "02dcb0f6-2cb1-4404-8e0e-7f83e9a1bd5f",
+          "port": "out"
+        },
+        {
+          "device_uuid": "59bc86fd-7184-4d6a-9a05-fe4b6151eb03",
+          "port": "in"
+        }
+      ]
+    },
+    {
+      "signal": "qureed.signals.generic_quantum_signal.GenericQuantumSignal",
+      "conn": [
+        {
+          "device_uuid": "7ec4ce11-4ee8-4a41-bfa5-84674eff4639",
+          "port": "out"
+        },
+        {
+          "device_uuid": "b99d3256-ec8e-4e39-85cf-7b6776e47db7",
+          "port": "in"
+        }
+      ]
+    },
+    {
+      "signal": "qureed.signals.generic_quantum_signal.GenericQuantumSignal",
+      "conn": [
+        {
+          "device_uuid": "00aed471-84ed-4da9-b265-a6b45d08e282",
+          "port": "qout1"
+        },
+        {
+          "device_uuid": "fc191f3b-ff29-4a39-b63e-589e9f617c91",
+          "port": "in"
+        }
+      ]
+    },
+    {
+      "signal": "qureed.signals.generic_quantum_signal.GenericQuantumSignal",
+      "conn": [
+        {
+          "device_uuid": "00aed471-84ed-4da9-b265-a6b45d08e282",
+          "port": "qout0"
+        },
+        {
+          "device_uuid": "ebd10ce7-e410-4291-968b-d0397516a866",
+          "port": "in"
+        }
+      ]
+    },
+    {
+      "signal": "qureed.signals.generic_quantum_signal.GenericQuantumSignal",
+      "conn": [
+        {
+          "device_uuid": "59bc86fd-7184-4d6a-9a05-fe4b6151eb03",
+          "port": "out"
+        },
+        {
+          "device_uuid": "8c266867-57f2-41bb-b51a-36190aedf985",
+          "port": "input1"
+        }
+      ]
+    },
+    {
+      "signal": "qureed.signals.generic_quantum_signal.GenericQuantumSignal",
+      "conn": [
+        {
+          "device_uuid": "ebd10ce7-e410-4291-968b-d0397516a866",
+          "port": "out"
+        },
+        {
+          "device_uuid": "8c266867-57f2-41bb-b51a-36190aedf985",
+          "port": "input2"
+        }
+      ]
+    },
+    {
+      "signal": "qureed.signals.generic_quantum_signal.GenericQuantumSignal",
+      "conn": [
+        {
+          "device_uuid": "fc191f3b-ff29-4a39-b63e-589e9f617c91",
+          "port": "out"
+        },
+        {
+          "device_uuid": "8c266867-57f2-41bb-b51a-36190aedf985",
+          "port": "input3"
+        }
+      ]
+    },
+    {
+      "signal": "qureed.signals.generic_quantum_signal.GenericQuantumSignal",
+      "conn": [
+        {
+          "device_uuid": "b99d3256-ec8e-4e39-85cf-7b6776e47db7",
+          "port": "out"
+        },
+        {
+          "device_uuid": "8c266867-57f2-41bb-b51a-36190aedf985",
+          "port": "input4"
+        }
+      ]
+    },
+    {
+      "signal": "qureed.signals.generic_float_signal.GenericFloatSignal",
+      "conn": [
+        {
+          "device_uuid": "b1bdbcad-855f-4219-9d3a-32fdddf0ef97",
+          "port": "float"
+        },
+        {
+          "device_uuid": "00aed471-84ed-4da9-b265-a6b45d08e282",
+          "port": "phase_shift"
+        }
+      ]
+    },
+    {
+      "signal": "qureed.signals.generic_float_signal.GenericFloatSignal",
+      "conn": [
+        {
+          "device_uuid": "f86e5cd9-366d-4a5f-ac48-257640251572",
+          "port": "float"
+        },
+        {
+          "device_uuid": "00aed471-84ed-4da9-b265-a6b45d08e282",
+          "port": "external_phase_shift"
+        }
+      ]
+    }
+  ]
+}

@@ -3,6 +3,7 @@
  created with template
 """
 from typing import Union
+import jax.numpy as jnp
 import qureed
 from qureed.devices import (
     GenericDevice, schedule_next_event,
@@ -11,12 +12,16 @@ from qureed.assets.icon_list import *
 from qureed.devices.port import Port
 from qureed.signals import *
 from photon_weave.state.envelope import Envelope
+from photon_weave.state.fock import Fock
 from photon_weave.state.composite_envelope import CompositeEnvelope
 from photon_weave.operation import Operation, CompositeOperationType
 from photon_weave.operation import FockOperationType
+from photon_weave._math.ops import annihilation_operator, creation_operator
 import jax.numpy as jnp
 import custom
 import traceback
+
+    
 
 
 class UnitCell(GenericDevice):
@@ -109,6 +114,9 @@ class UnitCell(GenericDevice):
             qin0_signal = signals.get("qin0", None)
             qin1_signal = signals.get("qin1", None)
 
+            if (qin0_signal is None) and (qin1_signal is None):
+                return
+
             if qin0_signal is None:
                 env0 = Envelope()
             else:
@@ -119,18 +127,12 @@ class UnitCell(GenericDevice):
             else:
                 env1 = signals["qin1"].contents
 
-            print(f"qin0_signal: {qin0_signal}, qin1_signal: {qin1_signal}")
-            self.log_message(f"env0: {env0}, env1: {env1}")
-
-            if (qin0_signal is None) and (qin1_signal is None):
-                print("MZI has no input")
-                self.log_message("MZI no input here")
-                return
+            #print(f"qin0_signal: {qin0_signal}, qin1_signal: {qin1_signal}")
+            #self.log_message(f"env0: {env0}, env1: {env1}")
 
 
             ce = CompositeEnvelope(env0, env1)
             ce.combine(env0.fock, env1.fock)
-            # print (f"ce.states[0]:{ce.states[0]}")
 
             # create operator for beam splitter and phase shifter
             fo_beam_splitter = Operation(CompositeOperationType.NonPolarizingBeamSplitter, eta=jnp.pi / 4)
@@ -140,12 +142,10 @@ class UnitCell(GenericDevice):
             # implement a MZI with beam splitter, phase shifter, beam splitter
             # apply the beam splitter
             ce.apply_operation(fo_beam_splitter, env0.fock, env1.fock)
-            print(f"ce.states[0] after first beam splitter: {ce.states[0]}")
-            self.log_state(f"ce.states[0] after first beam splitter: ", ce.states[0].state)
-
 
             # apply the phase shifter
             ce.apply_operation(fo_phase_shifter, env1.fock)
+
             # apply the beam splitter twice
             ce.apply_operation(fo_beam_splitter, env0.fock, env1.fock)
 
